@@ -1,0 +1,14 @@
+package com.yuzu.themoviedb.model.repository
+
+import com.yuzu.themoviedb.model.data.MovieData
+import io.reactivex.Single
+
+
+
+interface MovieDBRepository {
+    fun getAll(): Single<List<MovieData>>
+    fun getDataById(id: Int): Single<MovieData>
+    fun insert(data: MovieData)
+    fun insert(data: List<MovieData>)
+    fun delete(data: MovieData)
+}
